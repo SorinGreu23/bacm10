@@ -107,46 +107,47 @@ img {
 }
 
 /* ************************NAVBAR***************************** */
-nav {
-    background: transparent;
-    width: 100vw;
-    height: 5rem;
-    position: fixed;
-    top: 0;
-    z-index: 11;
+#side_nav {
+    background: #000;
+    min-width: 200px;
+    max-width: 200px;
+    transition: all 0.3s;
 }
 
-/*change nav bar styles on scroll using js*/
-.window-scroll {
-    background: var(--color-primary);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-
+.content {
+    min-height: 100vh;
+    width: 100%;
 }
 
-.nav_container {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+hr.h-color {
+    background: #eee;
 }
 
-nav button {
-    display: none;
+.sidebar li.active {
+    background: #eee;
+    border-radius: 8px;
 }
 
-.nav_menu {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+.sidebar li.active a,
+.sidebar li.active a:hover {
+    color: #000;
 }
 
-.nav_menu a {
-    font-size: 0.9rem;
-    transition: var(--transition);
+.sidebar li a {
+    color: #fff;
 }
 
-.nav_menu a:hover {
-    color: var(--color-bg2);
+@media(max-width: 767px) {
+    #side_nav {
+        margin-left: -250px;
+        position: absolute;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #side_nav.active {
+        margin-left: 0;
+    }
 }
 
 /* ============================= HEADER ========================== */
